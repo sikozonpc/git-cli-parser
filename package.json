@@ -1,0 +1,9 @@
+{
+  "name": "git-cli-parser",
+  "version": "0.0.1",
+  "description": "Javascript git cli parser, get the output of git commands in JSON format.",
+  "main": "index.js",
+  "repository": "https://github.com/sikozonpc/git-cli-parser",
+  "author": "tiagotaquelim",
+  "license": "MIT"
+}
