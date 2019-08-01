@@ -1,4 +1,11 @@
 const log = require('./lib/bin/log')
-const { status } = require('./lib/bin/status')
+const { getStatus, getStatusSync } = require('./lib/bin/status')
 
-executor('git status --porcelain', )
+// Async exec
+// getStatus()
+//   .then(res => {
+        
+//   })
+// Sync exec
+const data = getStatusSync()
+console.log(data)
