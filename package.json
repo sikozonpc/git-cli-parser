@@ -1,9 +1,38 @@
 {
   "name": "git-cli-parser",
   "version": "0.0.1",
-  "description": "Javascript git cli parser, get the output of git commands in JSON format.",
+  "description": "NodeJS git cli parser, get the output of git commands in JSON format.",
+  "homepage": "https://github.com/sikozonpc/git-cli-parser/blob/master/README.md",
   "main": "index.js",
-  "repository": "https://github.com/sikozonpc/git-cli-parser",
-  "author": "tiagotaquelim",
-  "license": "MIT"
+  "author": "Tiago Taquelim <tiago.taquelim.ferreira@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint lib",
+    "test": "jest --coverage --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "6.1.0",
+    "eslint-config-standard": "13.0.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-node": "9.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.0",
+    "jest": "24.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sikozonpc/git-cli-parser"
+  },
+  "keywords": [
+    "git",
+    "git-cli",
+    "parser",
+    "git-parser",
+    "cli",
+    "node"
+  ],
+  "bugs": {
+    "url": "https://github.com/sikozonpc/git-cli-parser/issues"
+  }
 }
