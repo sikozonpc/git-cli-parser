@@ -7,19 +7,25 @@
 The goal of this package is to call a single function and return an object containing the 
 parsed stdout of the git command.
 
+The package also provides a small wrapper around Node `child_process.exec` to execute the git-cli commands.
+Meaning that you can choose to only use the parser functionality and implment an executor yourself. 
+
 ### Example
+
+- 
 
 ```js
 // Synchronous way
+const executor = require('node-git-parser/@executor)
 const { getStatus } = require('node-git-parser')
 
-const data = getStatus()
+const data = executor( getStatus() )
 console.log(data) // [ { name: 'index.js', status: 'modified' } ]
 ```
 ```js
 // Async way
 const { getStatusAsync } = requrie('node-git-parser')
-getStateusAsync()
+asyncExecutor(getStateusAsync)
   .then(res => {
     console.log(res) // [ { name: 'index.js', status: 'modified' } ]
   })
@@ -44,7 +50,7 @@ Go to the wiki LINK to see the full documentation.
 
 #### getStatus()
 Returns an array of the file changes
-`{ name: 'fileName', status: 'modified' }`
+`{ name: 'fileName.js', status: 'modified' }`
 
 #### getLog()
 
