@@ -16,7 +16,7 @@ describe('gitStatus()', () => {
   }
 
   const parsedData = gitStatus(`A test.js`)
-  const emptyParsedData = gitStatus(``)
+  const emptyParsedData = gitStatus()
 
   it('should return an array of objects with name and status properties not empty', () => {
     expect(typeof parsedData[0]).toEqual('object')
@@ -25,7 +25,7 @@ describe('gitStatus()', () => {
   })
 
   it('should return an empty array if none stdout is given', () => {
-    expect(emptyParsedData).toHaveLength(0)
+    expect(emptyParsedData).toEqual(undefined)
   })
 
   describe('Status codes: ', () => {
