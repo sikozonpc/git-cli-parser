@@ -1,22 +1,22 @@
-const { getStatus } = require('../lib/bin')
+const { gitStatus } = require('../lib/bin')
 const statusCodes = require('../lib/utils/statusCodes')
 
 function createTest (code) {
   it(`should return ${statusCodes[code]} status code`, () => {
-    const parsedData = getStatus(`${code} test.js`)
+    const parsedData = gitStatus(`${code} test.js`)
 
     expect(parsedData[0].status).toEqual(statusCodes[code])
   })
 }
 
-describe('getStatus()', () => {
+describe('gitStatus()', () => {
   const mockStdout = {
     name: 'test.js',
     status: 'added'
   }
 
-  const parsedData = getStatus(`A test.js`)
-  const emptyParsedData = getStatus(``)
+  const parsedData = gitStatus(`A test.js`)
+  const emptyParsedData = gitStatus(``)
 
   it('should return an array of objects with name and status properties not empty', () => {
     expect(typeof parsedData[0]).toEqual('object')
@@ -33,6 +33,4 @@ describe('getStatus()', () => {
       createTest(code)
     }
   })
-
-  //TODO: test Async
 })
